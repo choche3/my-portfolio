@@ -80,6 +80,14 @@ header .container {
   text-align: center;
   background: radial-gradient(circle at top left, #0a0f1c 0%, #00172d 100%);
 }
+.profile-pic {
+  width: 150px;
+  height: 170px;
+  border-radius: 50%;
+  border: 3px solid #00eaff;
+  margin-bottom: 1rem;
+}
+
 
 .home h2 {
   font-size: 2.5rem;

@@ -21,8 +21,8 @@ h3, h4
     border: 5px solid rgb(255, 255, 255, 0.2);
     border-radius: 50%;
     border-top-color: yellow;
-    animation: spin 1s linear;
-    infinite:
+    animation: spin 1s linear infinite;
+    
 }
 
 @keyframes spin 
