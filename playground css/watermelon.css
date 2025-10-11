@@ -1,4 +1,4 @@
-:root 
+/* :root 
         {
             --bg: #87d8c2;
             --green: #009900;
@@ -8,7 +8,7 @@
         body
         {
             background-color: var(--bg);
-        }
+        } */
         .watermelon
         {
             position: absolute;
