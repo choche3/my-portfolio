@@ -1,130 +1,81 @@
-/* :root 
-        {
-            --bg: #87d8c2;
-            --green: #009900;
-            --red: #e70001;
-            --seed: #420200;
-        }
-        body
-        {
-            background-color: var(--bg);
-        } */
-        .watermelon
-        {
-            position: absolute;
-            height: 500px;
-            width: 500px;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: autos;
-        }
-        .cut-1
-        {
-            position: absolute;
-            height: 100px;
-            width: 200px;
-            left: 30%;
-            top: 40%;
-            border-radius: 50%;
-            transform: rotate(45deg);
-            background-color: var(--red);
-        }
-        .cut-1::after
-        {
-            content: "";
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: -15%;
-            border-bottom: 60px solid var(--green);
-            border-bottom-left-radius: 100px;
-            border-bottom-right-radius: 100px;
-        }
-        .seed1, .seed2, .seed3, .seed4, .seed5, .seed6
-        {
-            height: 10px;
-            width: 10px;
-            border-bottom-right-radius: 100px;
-            border-top-left-radius: 100px;
-            background-color: var(--seed);
-        }
-        .seed1
-        {
-            position: absolute;
-            left:50%;
-            top: 40%;
-        }
-        .seed2
-        {
-            position: absolute;
-            left: 48%;
-            top: 40%;
-        }
-        .seed3
-        {
-            position: absolute;
-            left: 45%;
-            top: 40%;
-        }
-         .seed4
-        {
-            position: absolute;
-            left: 40%;
-            top: 35%;
-        }
-         .seed5
-        {
-            position: absolute;
-            left: 40%;
-            top: 40%;
-        }
-        .seed6
-        {
-            position: absolute;
-            left: 43%;
-            top: 47%;
-        }
-        .seed7
-        {
-            position: absolute;
-            left: 51%;
-            top: 46%;
-        }
-        .cut-2
-        {
-            position: absolute;
-            height: 100px;
-            width: 200px;
-            left: 30%;
-            top: 40%;
-            border-radius: 50%;
-            transform: rotate(-130deg);
-            background-color: var(--green);
-            animation: slice 5s ease-in-out infinite;
-        }
-        .cut-2::after
-        {
-            content: "";
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: -15%;
-            border-bottom: 60px solid var(--green);
-            border-bottom-left-radius: 100px;
-            border-bottom-right-radius: 100px;
-        }
-        @keyframes slice
-        {
-            from
-            {
-                left: 30%;
-                top: 40%;
-            }
-            to
-            {
-                left: 45%;
-                top: 50%;
-            }
-        }
+/* Playground item box */
+.playground-item {
+     background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+/* Watermelon styling (contained inside item) */
+.watermelon {
+    position: relative;
+    height: 200px;   /* smaller so it fits */
+    width: 200px;
+    margin: 0 auto;
+}
+
+.cut-1 {
+    position: absolute;
+    height: 60px;
+    width: 120px;
+    left: 70px;
+    top: 50px;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    background-color: var(--red);
+}
+.cut-1::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -10%;
+    border-bottom: 25px solid var(--green);
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+}
+
+/* Seeds */
+.seed1, .seed2, .seed3, .seed4, .seed5, .seed6, .seed7 {
+    height: 6px;
+    width: 10px;
+    border-bottom-right-radius: 100px;
+    border-top-left-radius: 100px;
+    background-color: var(--seed);
+    position: absolute;
+}
+.seed1 { left: 95px; top: 90px;}
+.seed2 { left: 85px; top: 85; }
+.seed3 { left: 75; top: 95px; }
+.seed4 { left: 105; top: 85; }
+.seed5 { left: 115%; top: 95px; }
+.seed6 { left: 90px; top: 105px; }
+.seed7 { left: 106px; top: 104px; }
+
+.cut-2 {
+    position: absolute;
+    height: 120px;
+    width: 60px;
+    left: 70;
+    top: 40px;
+    border-radius: 50%;
+    transform: rotate(-130deg);
+    background-color: var(--green);
+    animation: slice 5s ease-in-out infinite;
+}
+.cut-2::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -10%;
+    border-bottom: 40px solid var(--green);
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+
+/* Animation */
+@keyframes slice {
+    from { transform: rotate(-130deg) translate(0, 0); }
+    to   { transform: rotate(-130deg) translate(20px, 20px); }
+}
