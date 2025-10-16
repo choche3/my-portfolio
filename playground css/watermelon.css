@@ -6,10 +6,11 @@
     }
 /* Playground item box */
 .playground-item {
-     background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 1rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 1rem;
+    
 }
 
 /* Watermelon styling (contained inside item) */
@@ -24,23 +25,27 @@
     margin: 0 auto;
 }
 
+/* the red part of the watermelon */
 .cut-1 {
     position: relative;
-    height: 100px;
-    width: 170px;
+    height: 22%;
+    width: 45%;
     left: 30%;
     top: 40%;
     border-radius: 50%;
     transform: rotate(45deg);
     background-color: var(--red);
 }
+
+/* the lower circle of the watermelon */
 .cut-1::after {
     content: "";
-    position: relative;
+    position: absolute;
     height: 100%;
-    width: 100%;
-    top: -15%;
-    border-bottom: 60px solid var(--green);
+    width: 105%;
+    top: -4.1%;
+    left: 0%;
+    border-bottom: 20px solid var(--green);
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
 }
@@ -52,8 +57,10 @@
     border-bottom-right-radius: 100px;
     border-top-left-radius: 100px;
     background-color: var(--seed);
-    /* position: absolute; */
+   
 }
+
+/* individual seeds */
 .seed1 { position: absolute; left: 50%; top: 40%; }
 .seed2 { position: absolute; left: 48%; top: 42%; }
 .seed3 { position: absolute; left: 45%; top: 40%; }
@@ -62,26 +69,29 @@
 .seed6 { position: absolute; left: 43%; top: 47%; }
 .seed7 { position: absolute; left: 51%; top: 46%; }
 
+/* the lower upper half of the sliced melon */
 .cut-2 {
-    position: relative;
-    height: 100px;
-    width: 200px;
+    position: absolute;
+    height: 60px;
+    width: 91.6px;
     left: 30%;
-    top: 40%;
+    top: -10%;
     border-radius: 50%;
     transform: rotate(-130deg);
     background-color: var(--green);
     animation: slice 5s ease-in-out infinite;
 }
+/* upper half of the watermelon */
 .cut-2::after {
     content: "";
-    position: relative;
+    position: absolute;
     height: 100%;
-    width: 100%;
-    top: -15%;
+    width: 125%;
+    top: 37%;
+    left: -20%;
     border-bottom: 20px solid var(--green);
-    border-bottom-left-radius: 60px;
-    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
 }
 
 /* Animation */
