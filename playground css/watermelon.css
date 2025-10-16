@@ -16,7 +16,7 @@
 /* Watermelon styling (contained inside item) */
 .watermelon {
     position: relative;
-    height: 200px;   /* smaller so it fits */
+    height: 200px;   
     width: 200px;
     top: 0;
     left: 0;
@@ -28,10 +28,10 @@
 /* the red part of the watermelon */
 .cut-1 {
     position: relative;
-    height: 22%;
+    height: 20%;
     width: 45%;
     left: 30%;
-    top: 40%;
+    top: 43%;
     border-radius: 50%;
     transform: rotate(45deg);
     background-color: var(--red);
@@ -45,7 +45,7 @@
     width: 105%;
     top: -4.1%;
     left: 0%;
-    border-bottom: 20px solid var(--green);
+    border-bottom: 25px solid var(--green);
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
 }
@@ -61,10 +61,10 @@
 }
 
 /* individual seeds */
-.seed1 { position: absolute; left: 50%; top: 40%; }
-.seed2 { position: absolute; left: 48%; top: 42%; }
+.seed1 { position: absolute; left: 50%; top: 44%; }
+.seed2 { position: absolute; left: 48%; top: 48%; }
 .seed3 { position: absolute; left: 45%; top: 40%; }
-.seed4 { position: absolute; left: 40%; top: 35%; }
+.seed4 { position: absolute; left: 40%; top: 44%; }
 .seed5 { position: absolute; left: 43%; top: 38%; }
 .seed6 { position: absolute; left: 43%; top: 47%; }
 .seed7 { position: absolute; left: 51%; top: 46%; }
@@ -72,10 +72,10 @@
 /* the lower upper half of the sliced melon */
 .cut-2 {
     position: absolute;
-    height: 60px;
-    width: 91.6px;
-    left: 30%;
-    top: -10%;
+    height: 59px;
+    width: 90.6px;
+    left: 200px;
+    top: -200px;
     border-radius: 50%;
     transform: rotate(-130deg);
     background-color: var(--green);
@@ -86,10 +86,10 @@
     content: "";
     position: absolute;
     height: 100%;
-    width: 125%;
-    top: 37%;
-    left: -20%;
-    border-bottom: 20px solid var(--green);
+    width: 100%;
+    top: -55%;
+    left: 0.8%;
+    border-bottom: 48px solid var(--green);
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
 }
