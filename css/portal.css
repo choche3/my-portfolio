@@ -4,7 +4,7 @@
     height: 200px;
     border: 3px solid #00f0ff;
     border-radius: 50%;
-    box-shadow: 0 0 3px #00f0ff, insert 0 0 3px #00f0ff;
+    box-shadow: 0 0 3px #00f0ff, inset 0 0 3px #00f0ff;
     position: relative;
     display: flex;
     justify-content: center;
