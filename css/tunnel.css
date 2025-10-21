@@ -1,9 +1,16 @@
 .tunnel
 {
     position: relative;
-    height: 200px;   
-    width: 200px;
+    height: 150px;   
+    width: 150px;
     perspective: 800px;
+}
+#container_2a
+{
+    height: 200px;
+    width: 150px;
+    left: 200px;
+    display: inline;
 }
 
 #frame

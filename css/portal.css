@@ -1,7 +1,8 @@
 .portal
 {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    /* top: 50px; */
     border: 3px solid #00f0ff;
     border-radius: 50%;
     box-shadow: 0 0 10px #00f0ff, inset 0 0 4px #00f0ff;
@@ -16,10 +17,10 @@
 {
     width: 40px;
     height: 40px;
-    left: -79px;
+    /* left: -79px; */
     background: #ff0061;
     border-radius: 50%;
-    position: relative;
+    position: absolute;
     animation: teleport 3s infinite ease-in-out;
 }
 @keyframes pulse
@@ -29,9 +30,9 @@
 }
 @keyframes teleport
 {
-    0%{transform: translateY(0); scale: 1; border-radius: 50%;}
-    25%{transform: translateY(-10px); scale:1 2; border-radius: 50%;}
-    0%{transform: translateY(0); scale: 1; border-radius: 50%;}
-    25%{transform: translateY(90px); scale:1 2; border-radius: 50%;}
-    0%{transform: translateY(0); scale: 1; border-radius: 50%;}
+    0%{transform: translateX(0); scale: (1); border-radius: 50%;}
+    25%{transform: translateX(-10px); scale: (1 2); border-radius: 50%;}
+    0%{transform: translateX(0); scale: (1); border-radius: 50%;}
+    25%{transform: translateX(90px); scale: (1 2); border-radius: 50%;}
+    0%{transform: translateX(0); scale: (1); border-radius: 50%;}
 }
