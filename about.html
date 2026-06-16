@@ -1,63 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joseph's portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/about.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Joseph Mwale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-page { padding: 7rem 0 5rem; }
+    .about-page-inner { display: grid; grid-template-columns: 1fr 320px; gap: 4rem; align-items: start; }
+    .about-page h1 { font-size: 3rem; font-weight: 700; line-height: 1.15; margin-bottom: 2rem; }
+    .about-page-body p { color: var(--muted); font-size: 1.05rem; margin-bottom: 1.25rem; }
+    .about-page-body strong { color: var(--text); }
+    .about-sidebar { position: sticky; top: 100px; }
+    .sidebar-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .sidebar-card h3 { font-size: 0.8rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 1rem; }
+    .sidebar-item { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.6rem; }
+    .sidebar-item span:last-child { color: var(--muted); font-family: var(--font-mono); font-size: 0.8rem; }
+    .interests { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .interest-tag { background: var(--bg3); border: 1px solid var(--border); padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.8rem; color: var(--muted); }
+    .sidebar-photo { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin-bottom: 1.5rem; }
+    .sidebar-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; }
+    .timeline { list-style: none; }
+    .timeline li { display: flex; gap: 1rem; margin-bottom: 1.5rem; position: relative; }
+    .timeline li::before { content: ''; position: absolute; left: 7px; top: 24px; bottom: -1.5rem; width: 1px; background: var(--border); }
+    .timeline li:last-child::before { display: none; }
+    .t-dot { width: 15px; height: 15px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); flex-shrink: 0; margin-top: 4px; }
+    .t-year { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); }
+    .t-text { font-size: 0.95rem; color: var(--text); }
+    @media (max-width: 900px) {
+      .about-page-inner { grid-template-columns: 1fr; }
+      .about-sidebar { position: static; }
+    }
+  </style>
 </head>
 <body>
-    <!-- ===== HEADER / NAVIGATION ===== -->
-    <header>
-        <div class="container">
-            <h1 class="logo">Joseph<span> Mwale</span></h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="playground.html">Playground</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="menu-toggle" id="menu-toggle">
-                    ☰
-                </div>
-            </nav>
+  <header id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">JM<span class="logo-dot">.</span></a>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="playground.html">Playground</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="about-page">
+    <div class="container about-page-inner">
+      <div class="about-page-body">
+        <p class="section-label">About Me</p>
+        <h1>Computer Scientist.<br>Web Developer.<br>Founder.</h1>
+        <p>
+          I'm <strong>Joseph Mwale</strong>, a Computer Science student from <strong>The Copperbelt University</strong>
+          in Zambia. I build websites and web applications — and I learn by doing.
+        </p>
+        <p>
+          This portfolio exists because I believe the best way to show what you can do is to actually
+          do it. Every project here is real work: a real client, a real problem, or a real experiment.
+        </p>
+        <p>
+          I founded <strong>HPE</strong> as a way to turn my long childhood dream company into a business, using the skills i've acquired — delivering
+          web solutions for people who need them. One of my recent projects was building the website
+          for <a href="https://realtimefabricators.com" target="_blank" class="inline-link">Realtime Fabricators</a>,
+          a fabrication company that needed a professional online presence.
+        </p>
+        <p>
+          Outside of code, I enjoy <strong>dancing</strong>, reading, and exploring ideas in
+          <strong>physics and psychology</strong>. I think the most interesting problems sit at
+          the intersection of fields — and I try to bring that curiosity into my work.
+          Its always fascinated me with things that happen. How the mind works, anatomy of the human body, how the universe came to be, 
+          and how technology can be used to solve problems and make life better.
+        </p>
+        <p>
+          My goal is to become a full-stack web developer, building products that are both
+          technically solid and genuinely useful. I'm early in that journey — and this portfolio
+          is how I track the progress.
+        </p>
+        <br>
+        <a href="index.html#projects" class="btn btn-primary">See My Projects →</a>
+        &nbsp;
+        <a href="contact.html" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <aside class="about-sidebar">
+        <div class="sidebar-photo">
+          <img src="images/presentable.jpg" alt="Joseph Mwale">
         </div>
-    </header>
-<section id="about">
-  <div class="about-container">
-    <div class="about-photo">
-      <img src="images/presentable.jpg" alt="Joseph's Profile Photo">
+        <div class="sidebar-card">
+          <h3>Quick Info</h3>
+          <div class="sidebar-item"><span>📍 Location</span><span>Lusaka, Zambia</span></div>
+          <div class="sidebar-item"><span>🎓 University</span><span>CBU</span></div>
+          <div class="sidebar-item"><span>🏢 Company</span><span>HPE (Founder)</span></div>
+          <div class="sidebar-item"><span>💼 Status</span><span>Open to work</span></div>
+        </div>
+        <div class="sidebar-card">
+          <h3>My Journey</h3>
+          <ul class="timeline">
+            <li>
+              <div class="t-dot"></div>
+              <div>
+                <div class="t-year">2026</div>
+                <div class="t-text">Built Realtime Fabricators website</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="t-year">2025</div>
+                <div class="t-text">Founded HPE</div>
+              </div>
+            </li>
+            <li>
+              <div class="t-dot"></div>
+              <div>
+                <div class="t-year">2024</div>
+                <div class="t-text">Started building real web projects</div>
+              </div>
+            </li>
+            <li>
+              <div class="t-dot"></div>
+              <div>
+                <div class="t-year">2021</div>
+                <div class="t-text">Began Computer Science at CBU</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h3>Interests</h3>
+          <div class="interests">
+            <span class="interest-tag">Web Dev</span>
+            <span class="interest-tag">Physics</span>
+            <span class="interest-tag">Anatomy</span>
+            <span class="interest-tag">Dancing</span>
+            <span class="interest-tag">Reading</span>
+            <span class="interest-tag">AI/ML</span>
+          </div>
+        </div>
+      </aside>
     </div>
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>
-        Hi, I’m <strong>Joseph Mwale</strong>, a Software Developer and a Computer Science graduate passionate
-        about building impactful digital solutions.
-        <br />
-        I specialize in mordern web development using Nextjs, Prisma and postgreSQL.
-        <br />
-        Currently, I am building <strong><a href="https://the-halfpipe-entertainment.vercel.app/">the Halfpipe Entertainment - HPE</a></strong>, a creator-focused 
-        platform designed to empower Zambian talent through technology and opportunity.
-      </p>
-      <p>
-        Beyond coding, I enjoy exploring ideas in physics, psychology, and entreneurship. 
-        My long-term goal is to build innovative companies that solve real problems and raise
-        the standard of digital products in Zambia.
-      </p>
-      <a href="#portfolio" class="btn">Soon to showcase my work</a>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <span class="logo">JM<span class="logo-dot">.</span></span>
+      <p>Built by Joseph Mwale · Zambia</p>
+      <div class="footer-links">
+        <a href="https://github.com/choche3" target="_blank">GitHub</a>
+        <a href="index.html">Home</a>
+        <a href="playground.html">Playground</a>
+      </div>
     </div>
-  </div>
-</section>
- 
-<footer>
-  <div class="container">
-    <p>© 2025 Joseph Mwale | All Rights Reserved.</p>
-  </div>
-</footer>
-   <script src="script.js"></script>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
