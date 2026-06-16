@@ -3,78 +3,213 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Joseph Mwale</title>
+  <title>Contact — Joseph Mwale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="css/contact.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
+  <style>
+    .contact-page { padding: 7rem 0 5rem; }
+    .contact-page-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact-left h1 { font-size: 2.8rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+    .contact-left p { color: var(--muted); font-size: 1.05rem; margin-bottom: 2rem; }
+    .contact-methods { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem; }
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.2s, transform 0.2s;
+      color: var(--text);
+    }
+    .contact-method:hover {
+      border-color: rgba(0,229,255,0.4);
+      transform: translateX(4px);
+      color: var(--accent);
+    }
+    .cm-icon {
+      width: 42px; height: 42px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .cm-body { display: flex; flex-direction: column; }
+    .cm-label { font-size: 0.75rem; font-family: var(--font-mono); color: var(--muted); letter-spacing: 0.05em; }
+    .cm-value { font-size: 0.95rem; font-weight: 500; }
 
+    /* Form */
+    .contact-form {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    .contact-form h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-family: var(--font-mono);
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.05em;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.7rem 1rem;
+      color: var(--text);
+      font-family: var(--font-main);
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--accent);
+    }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-group select option { background: var(--bg3); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit { width: 100%; padding: 0.85rem; font-size: 1rem; margin-top: 0.5rem; }
+    .form-note { font-size: 0.8rem; color: var(--muted); text-align: center; margin-top: 1rem; }
+
+    @media (max-width: 800px) {
+      .contact-page-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1 class="logo">Joseph<span> Mwale</span></h1>
+  <header id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">JM<span class="logo-dot">.</span></a>
       <nav>
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
           <li><a href="playground.html">Playground</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="menu-toggle" id="menu-toggle">☰</div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
       </nav>
     </div>
   </header>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <h2>Let's Get In Touch</h2>
-      <p class="intro">
-        If you visited my <strong>About</strong> page and would like to reach out,  
-        you can contact me through the form below or directly via:
-      </p>
+  <section class="contact-page">
+    <div class="container contact-page-inner">
+      <!-- LEFT: info -->
+      <div class="contact-left">
+        <p class="section-label">Get In Touch</p>
+        <h1>Let's build something together.</h1>
+        <p>
+          Whether you need a website, want to collaborate on a project, or just want to say hello —
+          I'd love to hear from you. I'm based in Lusaka, Zambia and open to remote work.
+        </p>
 
-      <div class="social-links">
-        <a href="https://wa.me/260973293878" target="_blank" class="social-btn whatsapp">WhatsApp Business</a>
-        <a href="https://wa.me/260950763993" target="_blank" class="social-btn whatsapp">WhatsApp</a>
-        <a href="https://www.facebook.com/joseph.mwale.75685962" target="_blank" class="social-btn facebook">Facebook</a>
-        <a href="https://www.linkedin.com/in/joseph-mwale-220148221" target="_blank" class="social-btn linkedin">LinkedIn</a>
+        <div class="contact-methods">
+          <a href="mailto:mwalejoseph138@gmail.com" class="contact-method">
+            <div class="cm-icon">✉</div>
+            <div class="cm-body">
+              <span class="cm-label">Email</span>
+              <span class="cm-value">mwalejoseph138@gmail.com</span>
+            </div>
+          </a>
+          <a href="https://github.com/choche3" target="_blank" class="contact-method">
+            <div class="cm-icon">⌥</div>
+            <div class="cm-body">
+              <span class="cm-label">GitHub</span>
+              <span class="cm-value">github.com/choche3</span>
+            </div>
+          </a>
+          <div class="contact-method" style="cursor: default;">
+            <div class="cm-icon">📍</div>
+            <div class="cm-body">
+              <span class="cm-label">Location</span>
+              <span class="cm-value">Lusaka, Zambia · Open to Remote</span>
+            </div>
+          </div>
+        </div>
       </div>
 
+      <!-- RIGHT: form -->
       <div class="contact-form">
-        <form action="mailto:mwalejoseph138@gmail.com" method="post" enctype="text/plain">
+        <h2>Send a message</h2>
+        <div class="form-row">
           <div class="form-group">
-            <input type="text" name="name" placeholder="Your Name" required>
+            <label for="name">YOUR NAME</label>
+            <input type="text" id="name" placeholder="e.g. Jane Banda" />
           </div>
           <div class="form-group">
-            <input type="email" name="email" placeholder="Your Email" required>
+            <label for="email">YOUR EMAIL</label>
+            <input type="email" id="email" placeholder="jane@example.com" />
           </div>
-          <div class="form-group">
-            <input type="text" name="subject" placeholder="Subject" required>
-          </div>
-          <div class="form-group">
-            <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
-          </div>
-          <button type="submit" class="send-btn">Send Message</button>
-        </form>
+        </div>
+        <div class="form-group">
+          <label for="subject">WHAT IS THIS ABOUT?</label>
+          <select id="subject">
+            <option value="">Select a topic...</option>
+            <option>I need a website built</option>
+            <option>I want to collaborate</option>
+            <option>Job / internship opportunity</option>
+            <option>Just saying hello</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">MESSAGE</label>
+          <textarea id="message" placeholder="Tell me what you're thinking..."></textarea>
+        </div>
+        <button class="btn btn-primary form-submit" onclick="handleSubmit()">Send Message</button>
+        <p class="form-note">Or email me directly — I reply within 24 hours.</p>
       </div>
-    </div>
-
-    <!-- Chatbot Icon -->
-    <div class="chatbot-icon">
-      🤖
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>© 2025 Joseph Mwale | All Rights Reserved.</p>
+    <div class="container footer-inner">
+      <span class="logo">JM<span class="logo-dot">.</span></span>
+      <p>Built by Joseph Mwale · Zambia</p>
+      <div class="footer-links">
+        <a href="https://github.com/choche3" target="_blank">GitHub</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    function handleSubmit() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please fill in your name, email, and message.');
+        return;
+      }
+
+      const mailto = `mailto:mwalejoseph138@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Contact')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+      window.location.href = mailto;
+    }
+  </script>
 </body>
 </html>

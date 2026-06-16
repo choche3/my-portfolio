@@ -1,106 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joseph's portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joseph Mwale — Web Developer & Founder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- ===== HEADER / NAVIGATION ===== -->
-    <header>
-        <div class="container">
-            <h1 class="logo">Joseph<span> Mwale</span></h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="playground.html">Playground</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="menu-toggle" id="menu-toggle">
-                    ☰
-                </div>
-            </nav>
-        </div>
-    </header>
 
-    <!-- ===== HOME SECTION ===== -->
-    <section id="home" class="home">
-        <div class="container">
-            <img src="images\friendlyFace.jpg" alt="Joseph Mwale" class="profile-pic">
-            <h2>Hi, I'm <span>Joseph Mwale</span></h2>
-            <p>
-                A Software Developer focused on building modern web applications and digital products.
-                Founder & Developer of the Halfpipe Entertainment - a platform empowering Zambian talent through technology.
-            </p>
-            <a href="#projects" class="btn">View My Work</a>
-        </div>
-    </section>
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">JM<span class="logo-dot">.</span></a>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="playground.html">Playground</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+      </nav>
+    </div>
+  </header>
 
-    <!-- ===== ABOUT SECTION ===== -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2><a href="about.html" style="color: #00eaff; text-decoration-line: none;">About Me</a></h2>
-            <p>
-                I'm a Computer Science student at the Copperbelt University, passionate about 
-                software development, innovation, and building solutions that make an impact. 
-                I enjoy learning, experimenting with code, and growing one project at a time.<br>
-                Click the <em>About Me</em> to see a little details.
-            </p>
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Hi, I'm Joseph Mwale 👋</p>
+        <h1>I build <span class="accent">websites</span><br>that work.</h1>
+        <p class="hero-sub">
+          Computer Science student at Copperbelt University. Founder of <strong>HPE</strong>.
+          Passionate about turning ideas into clean, functional web experiences.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">See My Work</a>
+          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
         </div>
-    </section>
-
-    <!-- ===== PROJECTS SECTION ===== -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <!-- Example Project -->
-                <div class="project">
-                    <h3>Inventory Management System</h3>
-                    <p>A web-based system for tracking products, stock, and sales efficiently.</p>
-                </div>
-                <div class="project">
-                    <h3>AI Chatbot</h3>
-                    <p>An interactive chatbot built using React and AI APIs for project guidance.</p>
-                </div>
-            </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <img src="images/friendlyFace.jpg" alt="Joseph Mwale">
         </div>
-    </section>
-
-    <!-- ===== PLAYGROUND SECTION ===== -->
-    <section id="playground" class="playground">
-        <div class="container">
-            <h2><a href="playground.html" style="color: #00eaff; text-decoration-line: none;">HTML Playground</a></h2>
-            <p>This section is reserved for playful HTML experiments 😉<br> Click the <em>HTML playground</em> header to enter the playground</p>
-            <div class="playground-area">
-                
-            </div>
+        <div class="status-badge">
+          <span class="status-dot"></span> Open to projects
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="scroll-hint">↓ scroll</div>
+  </section>
 
-    <!-- ===== CONTACT SECTION ===== -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2><a href="contact.html" style="color: #00eaff; text-decoration-line: none;">Contact Me</a></h2>
-            <p>Interested in collaborating or just saying hi?<br>Check the <em>'Contact Me'</em> section or simply Reach out below!</p>
-            <ul class="contact-info">
-                <li>Email: <a href="mailto:mwalejoseph138@gmail.com">mwalejoseph138@gmail.com</a></li>
-                <li>GitHub: <a href="https://github.com/choche3" target="_blank">https://github.com/choche3</a></li>
-            </ul>
+  <!-- ===== SKILLS STRIP ===== -->
+  <div class="skills-strip">
+    <div class="skills-track">
+      <span>HTML</span><span class="sep">·</span>
+      <span>CSS</span><span class="sep">·</span>
+      <span>JavaScript</span><span class="sep">·</span>
+      <span>React</span><span class="sep">·</span>
+      <span>Web Hosting</span><span class="sep">·</span>
+      <span>Prisma</span><span class="sep">·</span>
+      <span>Nextjs</span><span class="sep">·</span>
+      <span>Git & GitHub</span><span class="sep">·</span>
+      <span>Responsive Design</span>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT SNAPSHOT ===== -->
+  <section id="about" class="about-snap">
+    <div class="container about-inner">
+      <div class="about-photo-wrap">
+        <img src="images/presentable.jpg" alt="Joseph Mwale">
+      </div>
+      <div class="about-body">
+        <p class="section-label">About Me</p>
+        <h2>CS student. Web developer.<br>Founder.</h2>
+        <p>
+          Studied Computer Science at <strong>Copperbelt University, Zambia</strong> and
+          building real things along the way. I founded <strong>HPE</strong> and have built
+          websites for real businesses — including
+          <a href="https://realtimefabricators.com" target="_blank" class="inline-link">Realtime Fabricators</a>.
+        </p>
+        <p>
+          Outside code, I enjoy dancing, reading, and exploring physics and psychology.
+          I'm growing one project at a time — and this portfolio is the record of that journey.
+        </p>
+        <a href="about.html" class="btn btn-outline">Full Story →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <p class="section-label">Work</p>
+      <h2 class="section-heading">Projects & Websites</h2>
+      <p class="section-sub">Sites I've built for real people — and experiments that helped me grow.</p>
+
+      <div class="project-grid">
+
+        <!-- FEATURED: Realtime Fabricators -->
+        <div class="project-card featured">
+          <div class="card-badge">Live Website</div>
+          <div class="card-meta">
+            <span class="card-tag">Client Project</span>
+            <span class="card-tag">Web Design</span>
+          </div>
+          <h3>Realtime Fabricators</h3>
+          <p>
+            A professional business website built for Realtime Fabricators — a fabrication company.
+            Designed and developed from scratch with a clean, modern look that represents the brand online.
+          </p>
+          <div class="card-links">
+            <a href="https://realtimefabricators.com" target="_blank" class="btn btn-primary btn-sm">Visit Site ↗</a>
+          </div>
         </div>
-    </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="container">
-            <p>© 2025 Joseph Mwale | All Rights Reserved.</p>
+        <!-- HPE -->
+        <div class="project-card">
+          <div class="card-meta">
+            <span class="card-tag">Founder</span>
+            <span class="card-tag">Startup</span>
+          </div>
+          <h3>HPE — My Company</h3>
+          <p>
+            I founded HPE as a platform to elevate the standards of talent in Zambia. 
+            With the goal of providing a seamless ecosystem for talent and entertainment.
+            This is where my work as a developer meets entrepreneurship.
+          </p>
+          <div class="card-links">
+            <span class="card-status">In Progress</span>
+          </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <!-- Inventory System -->
+        <div class="project-card">
+          <div class="card-meta">
+            <span class="card-tag">Web App</span>
+            <span class="card-tag">JavaScript</span>
+          </div>
+          <h3>Inventory Management System</h3>
+          <p>
+            A web-based system for tracking products, stock levels, and sales — built to solve
+            a real operational problem.
+          </p>
+          <div class="card-links">
+            <span class="card-status">Academic Project</span>
+          </div>
+        </div>
+
+        <!-- AI Chatbot -->
+        <div class="project-card">
+          <div class="card-meta">
+            <span class="card-tag">React</span>
+            <span class="card-tag">AI API</span>
+          </div>
+          <h3>AI Project Guidance Chatbot</h3>
+          <p>
+            An interactive chatbot powered by AI APIs, built in React. Helps users navigate
+            and get guidance on projects.
+          </p>
+          <div class="card-links">
+            <span class="card-status">Experiment</span>
+          </div>
+        </div>
+
+        <!-- Portfolio itself -->
+        <div class="project-card">
+          <div class="card-meta">
+            <span class="card-tag">HTML/CSS/JS</span>
+            <span class="card-tag">GitHub Pages</span>
+          </div>
+          <h3>This Portfolio</h3>
+          <p>
+            Designed and built from scratch. Hosted on GitHub Pages. A living document
+            of my growth as a developer — updated as I ship new work.
+          </p>
+          <div class="card-links">
+            <a href="https://github.com/choche3" target="_blank" class="btn btn-ghost btn-sm">View on GitHub ↗</a>
+          </div>
+        </div>
+
+        <!-- ADD MORE card -->
+        <div class="project-card add-more">
+          <div class="add-icon">+</div>
+          <h3>More Coming</h3>
+          <p>New projects land here as I build them. This portfolio grows with me.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PLAYGROUND TEASER ===== -->
+  <section id="playground-teaser" class="playground-teaser">
+    <div class="container playground-inner">
+      <div class="playground-text">
+        <p class="section-label">Experiments</p>
+        <h2>HTML Playground</h2>
+        <p>Where I test ideas, try new CSS tricks, and build things just for fun. Not every experiment needs a client.</p>
+        <a href="playground.html" class="btn btn-outline">Enter Playground →</a>
+      </div>
+      <div class="playground-preview">
+        <div class="preview-window">
+          <div class="window-bar">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="window-body">
+            <div class="code-line"><span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"experiment"</span><span class="c-tag">&gt;</span></div>
+            <div class="code-line indent"><span class="c-tag">&lt;p&gt;</span><span class="c-text">just playing around</span><span class="c-tag">&lt;/p&gt;</span></div>
+            <div class="code-line"><span class="c-tag">&lt;/div&gt;</span></div>
+            <div class="code-line blink">█</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact">
+    <div class="container contact-inner">
+      <p class="section-label">Contact</p>
+      <h2>Let's build something.</h2>
+      <p class="contact-sub">
+        Got a project in mind? Need a website? Want to collaborate?<br>
+        Reach out — I read every message.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:mwalejoseph138@gmail.com" class="contact-link">
+          <span class="contact-icon">✉</span>
+          mwalejoseph138@gmail.com
+        </a>
+        <a href="https://github.com/choche3" target="_blank" class="contact-link">
+          <span class="contact-icon">⌥</span>
+          github.com/choche3
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-primary">Full Contact Page →</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="logo">JM<span class="logo-dot">.</span></span>
+      <p>Built by Joseph Mwale · Zambia · <span id="year"></span></p>
+      <div class="footer-links">
+        <a href="https://github.com/choche3" target="_blank">GitHub</a>
+        <a href="about.html">About</a>
+        <a href="playground.html">Playground</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -1,30 +1,43 @@
 // ====== NAVIGATION MENU TOGGLE ======
 const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+const navLinks = document.getElementById('nav-links');
 
-menuToggle.addEventListener('click', () => {
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+  });
+
+  // Close on link click (mobile)
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('active'));
+  });
+}
+
+// ====== SCROLL REVEAL ======
+const revealEls = document.querySelectorAll('.project-card, .about-inner, .contact-inner');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+revealEls.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
 });
 
-// ====== CLOSE MENU ON LINK CLICK (MOBILE) ======
-const links = document.querySelectorAll('.nav-links a');
-links.forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-    });
+// ====== NAVBAR SHRINK ON SCROLL ======
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  if (navbar) {
+    navbar.style.padding = window.scrollY > 50 ? '0' : '';
+  }
 });
 
-// ====== SMOOTH SCROLL BEHAVIOR ======
-const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
-smoothScrollLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// ====== OPTIONAL: SHOW A WELCOME MESSAGE IN CONSOLE ======
-console.log("💠 Welcome to Joseph Mwale’s Portfolio! Built with HTML, CSS & JS 💠");
+console.log("💠 Joseph Mwale Portfolio — github.com/choche3");

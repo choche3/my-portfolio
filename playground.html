@@ -1,85 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joseph's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="playground css/circle.css">
-    <link rel="stylesheet" href="playground css/watermelon.css">
-    <link rel="stylesheet" href="css/tunnel.css">
-    <link rel="stylesheet" href="css/portal.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playground — Joseph Mwale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="playground css/watermelon.css">
+  <style>
+    .pg-hero { padding: 7rem 0 3rem; text-align: center; }
+    .pg-hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+    .pg-hero p { color: var(--muted); font-size: 1.1rem; max-width: 520px; margin: 0 auto 2rem; }
 
+    .pg-grid {
+      padding: 2rem 0 6rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .pg-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .pg-card:hover { transform: translateY(-4px); border-color: rgba(0,229,255,0.4); }
+    .pg-preview {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg3);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+    .pg-info { padding: 1.25rem; }
+    .pg-info h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .pg-info p { font-size: 0.85rem; color: var(--muted); }
+
+    /* ---- Watermelon experiment ---- */
+    .wm-wrap { transform: scale(0.6); }
+    .watermelon {
+      width: 140px; height: 90px;
+      background: #e74c3c;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      position: relative;
+      overflow: hidden;
+    }
+    .watermelon::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 16px;
+      background: #27ae60;
+      border-radius: 50% 50% 0 0 / 80% 80% 0 0;
+    }
+    .wm-seed {
+      position: absolute;
+      width: 8px; height: 12px;
+      background: #2c3e50;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      transform: rotate(-20deg);
+    }
+
+    /* ---- CSS circle gradient ---- */
+    .circle-demo {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(var(--accent) 0deg, #0d1526 180deg, var(--accent) 360deg);
+      animation: spin 4s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ---- Neon button ---- */
+    .neon-btn {
+      padding: 0.75rem 2rem;
+      background: transparent;
+      color: #ff00ff;
+      border: 2px solid #ff00ff;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 0 8px #ff00ff44, inset 0 0 8px #ff00ff22;
+      transition: all 0.3s;
+    }
+    .neon-btn:hover {
+      background: #ff00ff22;
+      box-shadow: 0 0 20px #ff00ff88, inset 0 0 20px #ff00ff44;
+    }
+
+    /* ---- Typewriter ---- */
+    .typewriter-text {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--accent);
+      border-right: 2px solid var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: type 3s steps(30) infinite alternate;
+    }
+    @keyframes type {
+      from { width: 0; }
+      to { width: 240px; }
+    }
+
+    /* ---- Floating bubbles ---- */
+    .bubbles {
+      width: 100%; height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0, 229, 255, 0.15);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      animation: float linear infinite;
+    }
+    @keyframes float {
+      0%   { transform: translateY(200px) scale(0); opacity: 0; }
+      10%  { opacity: 1; }
+      100% { transform: translateY(-50px) scale(1); opacity: 0; }
+    }
+
+    /* ---- Add your own card ---- */
+    .pg-add {
+      border-style: dashed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      opacity: 0.5;
+      min-height: 280px;
+    }
+    .pg-add-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; }
+  </style>
 </head>
 <body>
-     <header>
-        <div class="container">
-            <h1 class="logo">Joseph<span> Mwale</span></h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="playground.html">Playground</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="menu-toggle" id="menu-toggle">
-                    ☰
-                </div>
-            </nav>
-        </div>
-    </header>
-     <section id="playground" class="playground">
-        <div class="container">
-            <h2>HTML Playground</h2>
-            <p>This section is reserved for playful HTML experiments 💻😁😎</p>
-            <p>Basically fun short codes in html to display in the box.</p>
-            <div class="playground-area">
-                <div class = "container_2">
-                    <div>
-                        <h4> Loading</h4>
-                        <h3>Animation</h3>
-                        <div class = "circle"></div>
-                    </div>
-                </div>
-                <div class="playground-item">
-                     <div class="watermelon">
-                        <div class="cut-1"></div>
-                        <div class="seed1"></div>
-                        <div class="seed2"></div>
-                        <div class="seed3"></div>
-                        <div class="seed4"></div>
-                        <div class="seed5"></div>
-                        <div class="seed6"></div>
-                        <div class="seed7"></div>
-                        <div class="cut-2"></div>
-                        <p>A sliced watermelon</p>
-                    </div> 
-                </div>            
-            </div>
-            <div>
-                <p><strong>Some portal Animation</strong></p>
-                <p>The first is a tunnel, magic tunnel😅<br>The second is a ball trying to escape a blackhole😆</p>
-            </div>
-            <div class="playground-area">
-                <div class="container_2" id="container_2a">    
-                    <div class="tunnel" id="frame"></div>
-                </div>
-                <div class="portal">
-                    <div class="shape"></div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <p>© 2025 Joseph Mwale | All Rights Reserved.</p>
-        </div>
-    </footer>
+  <header id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">JM<span class="logo-dot">.</span></a>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="playground.html">Playground</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+      </nav>
+    </div>
+  </header>
 
-    <script src="script.js"></script>
-    <script src="tunnel.js"></script>
+  <section class="pg-hero">
+    <div class="container">
+      <p class="section-label">Experiments</p>
+      <h1>HTML Playground 🧪</h1>
+      <p>A sandbox for CSS tricks, animations, and ideas I'm trying out. No client briefs. Just curiosity.</p>
+    </div>
+  </section>
+
+  <div class="container pg-grid">
+
+    <!-- Watermelon -->
+    <div class="pg-card">
+      <div class="pg-preview">
+        <div class="wm-wrap">
+          <div class="watermelon">
+            <div class="wm-seed" style="top:40%;left:20%;"></div>
+            <div class="wm-seed" style="top:55%;left:40%;transform:rotate(10deg);"></div>
+            <div class="wm-seed" style="top:45%;left:62%;transform:rotate(-30deg);"></div>
+            <div class="wm-seed" style="top:60%;left:70%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="pg-info">
+        <h3>CSS Watermelon</h3>
+        <p>Pure CSS shape art — no images, just border-radius and creativity.</p>
+      </div>
+    </div>
+
+    <!-- Spinning gradient -->
+    <div class="pg-card">
+      <div class="pg-preview">
+        <div class="circle-demo"></div>
+      </div>
+      <div class="pg-info">
+        <h3>Conic Gradient Spinner</h3>
+        <p>CSS conic-gradient + animation. One div, no JavaScript.</p>
+      </div>
+    </div>
+
+    <!-- Neon button -->
+    <div class="pg-card">
+      <div class="pg-preview">
+        <button class="neon-btn">hover me</button>
+      </div>
+      <div class="pg-info">
+        <h3>Neon Glow Button</h3>
+        <p>CSS box-shadow tricks to create a glowing neon effect on hover.</p>
+      </div>
+    </div>
+
+    <!-- Typewriter -->
+    <div class="pg-card">
+      <div class="pg-preview">
+        <div class="typewriter-text">console.log("hello world");</div>
+      </div>
+      <div class="pg-info">
+        <h3>Typewriter Animation</h3>
+        <p>CSS-only typewriter using steps() and overflow hidden. No JS needed.</p>
+      </div>
+    </div>
+
+    <!-- Bubbles -->
+    <div class="pg-card">
+      <div class="pg-preview">
+        <div class="bubbles" id="bubbles"></div>
+      </div>
+      <div class="pg-info">
+        <h3>Floating Bubbles</h3>
+        <p>JS-generated bubbles with staggered CSS animations.</p>
+      </div>
+    </div>
+
+    <!-- Add More -->
+    <div class="pg-card pg-add">
+      <div class="pg-add-icon">+</div>
+      <h3>More coming</h3>
+      <p>New experiments land here as I build them.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container footer-inner">
+      <span class="logo">JM<span class="logo-dot">.</span></span>
+      <p>Built by Joseph Mwale · Zambia</p>
+      <div class="footer-links">
+        <a href="https://github.com/choche3" target="_blank">GitHub</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Generate floating bubbles
+    const container = document.getElementById('bubbles');
+    for (let i = 0; i < 12; i++) {
+      const b = document.createElement('div');
+      b.className = 'bubble';
+      const size = Math.random() * 30 + 10;
+      b.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        left: ${Math.random() * 100}%;
+        animation-duration: ${Math.random() * 3 + 2}s;
+        animation-delay: ${Math.random() * 3}s;
+      `;
+      container.appendChild(b);
+    }
+  </script>
 </body>
 </html>
